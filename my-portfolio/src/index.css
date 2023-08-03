@@ -6,8 +6,8 @@ html {
 body {
   margin: 0;
   font-family: 300 11px/1.4 'Helvetica Neue', 'sans-serif'; /* (font-weight, font-size/line-height, font-family), (fallback font) */
-  color: #444;
-  background: #022c43;
+  color: white;
+  background: #3d0c0c;
   display: block;
   overflow: hidden;
   -webkit-font-smoothing: antialiased;
