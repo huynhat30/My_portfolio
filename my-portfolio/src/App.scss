@@ -1,0 +1,29 @@
+$primary-color: #fdd508; //creating primary color for project
+
+
+/* Importing libraries and assets*/
+
+@import 'animate.css'; 
+
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url('.assets/fonts/helvetica-neu.ttf') format('ttf')
+} //add font to project
+
+@font-face {
+  font-family: 'La Belle Aurore';
+  src: url('.assets/fonts/LaBelleAurore.woff2') format('woff2')
+} //add font to project
+
+@font-face {
+  font-family: 'Coolvetica';
+  src: url('.assets/fonts/CoolveticaRg-Regular.woff2') format('woff2')
+} //add font to project
+
+
+
+/* Main application CSS/SASS styling */
+
+input, textarea {
+  font-family: 'Helvetica Neue';
+}
