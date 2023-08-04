@@ -54,6 +54,10 @@
         font-family: sans-serif;
         letter-spacing: 3px;
         animation: fadeIn 1s 1.7s backwards;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    
 
         &::before {
             content: '<h3>';
