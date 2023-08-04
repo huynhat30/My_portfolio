@@ -1,0 +1,82 @@
+@import '../Layout/index';
+
+
+.home-page {
+    .text-zone {
+        position: absolute;
+        left: 15%;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 60%;
+        max-height: 90%;
+    }
+
+    h1 {
+        color: #fff;
+        font-size: 53px;
+        margin: 0;
+        margin-left: 60px;
+        font-weight: 400px;
+
+        &::before {
+            content: '<h1 class-name="child my-name" id="name">';
+            font-family: 'La Belle Aurore';
+            color: $codeColor;
+            font-size: 30px;
+            position: absolute;
+            margin-top: -90px;
+            left: 15px;
+            font-weight: 300;
+            opacity: 0.6;
+            animation: fadeIn 1s forwards;
+        }
+
+        &::after {
+            content: '</h1>';
+            font-family: 'La Belle Aurore';
+            color: $codeColor;
+            font-size: 30px;
+            position: absolute;
+            margin-top: 150px;
+            left: 0;
+            font-weight: 300;
+            animation: fadeIn 1s 2s backwards;
+        }
+    }
+
+
+    h3 {
+        margin-top: 40px;
+        margin-left: 140px;
+        font-size: 17px;
+        color: #8d8d8d;
+        font-weight: 400;
+        font-family: sans-serif;
+        letter-spacing: 3px;
+        animation: fadeIn 1s 1.7s backwards;
+
+        &::before {
+            content: '<h3>';
+            margin-left: -70px;
+            font-family: 'La Belle Aurore';
+            color: $codeColor;
+            font-size: 30px;
+            position: absolute;
+            margin-top: -15px;
+            font-weight: 300;
+            opacity: 0.6;
+        }
+
+        &::after {
+            content: '<h3>';
+            font-family: 'La Belle Aurore';
+            color: $codeColor;
+            font-size: 30px;
+            position: absolute;
+            margin-top: -15px;
+            margin-left: 10px;
+            font-weight: 300;
+            opacity: 0.6;
+        }       
+    }
+}

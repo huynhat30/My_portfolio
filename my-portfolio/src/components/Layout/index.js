@@ -1,12 +1,15 @@
 import './index.scss';
 import Sidebar from '../SidebarNav';
+import { Outlet } from 'react-router-dom';
 
 
 const MainLayout = () => {
     return (
-        <div>
-            Hi form layout <br/>
+        <div className='App'>
             <Sidebar />
+            <div className='wrapper'>
+                <Outlet></Outlet>
+            </div>
         </div>
     )
 }
