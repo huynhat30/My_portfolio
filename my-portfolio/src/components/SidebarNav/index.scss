@@ -88,14 +88,10 @@
         }
 
         &:nth-child(3) {
-            &::after {content: 'Skill';}
-        }
-
-        &:nth-child(4) {
             &::after {right: 7px; content: 'Projects';}
         }
 
-        &:nth-child(5) {
+        &:nth-child(4) {
             &::after {right: 5px; content: 'Contact';}
         }
 

@@ -22,7 +22,7 @@
         }
         .info{
             animation: fadeIn 1s backwards;
-            animation-delay: 3s;
+            animation-delay: 2s;
             p{
                 font-size: 15px;
                 color: whitesmoke;
@@ -31,19 +31,10 @@
                 min-width: -webkit-fill-available;
                 min-width: -moz-fit-content;
                 min-width: fit-content;
-                animation: pulse 1s 3s;
+                animation: pulse 1s 2s;
             }
         }
         
     }
 }
 
-.loader {
-    display: block;
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    margin: auto;
-  }
