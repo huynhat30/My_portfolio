@@ -1,7 +1,7 @@
 .text-animate {
     display: inline-block;
     opacity: 0;
-    animation: bounceIn 1s 1s forwards;
+    animation: bounceIn 1s 5s forwards;
     min-width: 15px;
     cursor: default;
     -webkit-user-select: none;
@@ -20,8 +20,8 @@
     
 
     &:hover {
-        animation: rubberBand 0.9s ease-in-out, ;
-        color: rgb(76, 169, 236);
+        animation: jumpNspin 0.6s alternate;
+        color:rgb(218, 113, 68);
         cursor: default;
         -webkit-user-select: none;
         -ms-user-select: none;
@@ -29,8 +29,29 @@
     }
 }
 
-@for $i from 1 through 39 {
+@for $i from 1 through 100 {
     .text-animate._#{$i} {
         animation-delay: #{$i / 12}s;
+    }
+}
+
+@keyframes jumpNspin {
+    0% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    20% {
+        transform: translateY(0px) rotate(50deg);
+    }
+    
+    40% {
+        transform: translateY(-30px) rotate(100deg);
+    }
+
+    50% {
+        transform: translateY(-30px) rotate(180deg);
+    }
+    
+    100% {
+        transform: translateY(0px) rotate(360deg);
     }
 }

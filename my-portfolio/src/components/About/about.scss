@@ -1,0 +1,49 @@
+@import '../Layout/index';
+
+.about-page {
+    .text-zone {
+        position: absolute;
+        left: 10%;
+        top: 30%;
+        transform: translateY(-50%);
+        width: 100vw;
+        vertical-align: middle;
+        display: table-cell;
+        max-height: 90%;
+
+        h1 {
+            font-size: 100px;
+            color: wheat;
+            font-weight: 400;
+            margin-top: 0;
+            position: relative;
+            margin-bottom: 40px;
+            left: 10px;
+        }
+        .info{
+            animation: fadeIn 1s backwards;
+            animation-delay: 3s;
+            p{
+                font-size: 15px;
+                color: whitesmoke;
+                font-family: sans-serif;
+                font-weight: 300;
+                min-width: -webkit-fill-available;
+                min-width: -moz-fit-content;
+                min-width: fit-content;
+                animation: pulse 1s 3s;
+            }
+        }
+        
+    }
+}
+
+.loader {
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+  }

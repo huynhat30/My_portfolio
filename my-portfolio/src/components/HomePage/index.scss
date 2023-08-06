@@ -12,15 +12,28 @@
     }
 
     h1 {
-        color: #fff;
-        font-size: 53px;
+        color: wheat;
+        font-size: 60px;
         margin: 0;
         margin-left: 60px;
-        font-weight: 400px;
+        font-weight: 200px;
+        font-family: Tahoma, sans-serif;
+
+        .my-name1{
+            font-size: 90px;
+            font-family: 'Helvetica Neue';
+            letter-spacing: 5px;
+            color:rgb(218, 113, 68);
+        }
+        .my-name2{
+            font-family: 'Coolvetica', sans-serif;
+            letter-spacing: 5px;
+        }
+
 
         &::before {
             content: '<h1 class-name="child my-name" id="name">';
-            font-family: 'La Belle Aurore';
+            font-family: 'La Belle Aurore',;
             color: $codeColor;
             font-size: 30px;
             position: absolute;
@@ -33,7 +46,7 @@
 
         &::after {
             content: '</h1>';
-            font-family: 'La Belle Aurore';
+            font-family: 'La Belle Aurore', sans-serif;
             color: $codeColor;
             font-size: 30px;
             position: absolute;
@@ -53,7 +66,7 @@
         font-weight: 400;
         font-family: sans-serif;
         letter-spacing: 3px;
-        animation: fadeIn 1s 1.7s backwards;
+        animation: fadeIn 1s 4s backwards;
         -webkit-user-select: none;
         -ms-user-select: none;
         user-select: none;
@@ -72,7 +85,7 @@
         }
 
         &::after {
-            content: '<h3>';
+            content: '</h3>';
             font-family: 'La Belle Aurore';
             color: $codeColor;
             font-size: 30px;
@@ -82,5 +95,81 @@
             font-weight: 300;
             opacity: 0.6;
         }       
+    }
+
+    .stage-cube-cont{
+        width: 50%;
+        height: 100%;
+        top: 0;
+        padding-top: 15%;
+        margin-left: 0;
+        position: absolute;
+        right: 0;
+        overflow: hidden;
+
+        .cubespinner {
+            animation: spinObj 12s ease-in-out infinite;
+            transform-style: preserve-3d;
+            transform-origin: 100px 100px 0;
+            margin-left: calc(50% - 100px);
+
+            div {
+                position: absolute;
+                width: 300px;
+                height: 300px;
+                background: rgba(255, 255, 255, 0.4);
+                font-size: 100px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                box-shadow: 0 0 20px 0 lightyellow;
+            }
+
+            .face_1{
+                transform: translateZ(200px);
+            }
+            .face_2{
+                transform: rotateY(90deg) translateZ(200px);
+            }
+            .face_3{
+                transform: rotateY(90deg) rotateX(90deg) translateZ(200px);
+            }
+            .face_4{
+                transform: rotateY(180deg) rotateZ(90deg) translateZ(200px);
+            }
+            .face_5{
+                transform: rotateY(-90deg) rotateZ(90deg) translateZ(200px);
+            }
+            .face_6{
+                transform: rotateX(-90deg) translateZ(200px);
+            }
+        }
+    }
+}
+
+@keyframes spinObj {
+    from,
+    to {
+        transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+    }
+
+    16%{
+        transform: rotateX(0deg) rotateY(-90deg) rotateZ(0deg);
+    }
+
+    33%{
+        transform: rotateX(0deg) rotateY(-90deg) rotateZ(90deg);
+    }
+
+    50%{
+        transform: rotateX(0deg) rotateY(-180deg) rotateZ(90deg);
+    }
+
+    66%{
+        transform: rotateX(0deg) rotateY(-270deg) rotateZ(90deg);
+    }
+
+    83%{
+        transform: rotateX(90deg) rotateY(0deg) rotateZ(0deg);
     }
 }
