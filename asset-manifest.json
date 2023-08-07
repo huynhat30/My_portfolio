@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/huynhat30/My_portfolio/static/css/main.95fa7660.css",
+    "main.js": "/huynhat30/My_portfolio/static/js/main.14ebf2e7.js",
+    "static/js/787.128fc6e9.chunk.js": "/huynhat30/My_portfolio/static/js/787.128fc6e9.chunk.js",
+    "static/media/name_logo2.png": "/huynhat30/My_portfolio/static/media/name_logo2.c3e515cc28dd91db3e89.png",
+    "static/media/helvetica-neu.ttf": "/huynhat30/My_portfolio/static/media/helvetica-neu.8a19678078a6b21c8057.ttf",
+    "static/media/profile.jpg": "/huynhat30/My_portfolio/static/media/profile.d63e6a154988a2132048.jpg",
+    "static/media/LaBelleAurore.woff2": "/huynhat30/My_portfolio/static/media/LaBelleAurore.a83c1c58fd7e43972e4a.woff2",
+    "static/media/CoolveticaRg-Regular.woff2": "/huynhat30/My_portfolio/static/media/CoolveticaRg-Regular.7d1f3b1dd46ad6557a17.woff2",
+    "index.html": "/huynhat30/My_portfolio/index.html",
+    "main.95fa7660.css.map": "/huynhat30/My_portfolio/static/css/main.95fa7660.css.map",
+    "main.14ebf2e7.js.map": "/huynhat30/My_portfolio/static/js/main.14ebf2e7.js.map",
+    "787.128fc6e9.chunk.js.map": "/huynhat30/My_portfolio/static/js/787.128fc6e9.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.95fa7660.css",
+    "static/js/main.14ebf2e7.js"
+  ]
+}
