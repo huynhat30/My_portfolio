@@ -1,5 +1,5 @@
 {
-  "homepage": "https://github.com/huynhat30/My_portfolio",
+  "homepage": "https://huynhat30.github.io/My_portfolio",
   "name": "my-portfolio",
   "author": "Huy Giang",
   "version": "0.1.0",
@@ -28,6 +28,7 @@
     "web-vitals": "^2.1.4"
   },
   "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "react-scripts": "5.0.1"
   },
   "scripts": {
@@ -35,7 +36,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "predeploy":"npm run build",
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
