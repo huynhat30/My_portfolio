@@ -18,7 +18,7 @@ const Project = ()=>  {
                 loading ?
                 <div className='loader'><HashLoader color="#36d7b7" size={100}/></div>
                 :
-                <div></div>
+                <div>Helloooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo</div>
         }
         </>
     )
