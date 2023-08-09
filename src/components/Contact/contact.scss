@@ -1,13 +1,17 @@
 @import '../Layout/index';
 
 .contact-page {
+        display: flex;
+        justify-content: center;
     .text-zone {
         position: absolute;
-        top: 20%;
-        margin: -10% auto;
-        width: 100vw;
-        display: table-cell;
+        top: 10%;
+        padding: 20px;
+        width: auto;
+        height: auto;
         max-height: 90%;
+        background: rgba($color: #3d0c0c, $alpha: 0.9);
+        border-radius: 30px;
 
         h1 {
             font-size: 100px;
@@ -15,6 +19,7 @@
             font-weight: 400;
             position: relative;
             margin-bottom: 40px;
+            margin-top: 0;
             font-family: 'Coolvetica', sans-serif;
             display: flex;
             justify-content: center;

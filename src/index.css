@@ -7,7 +7,8 @@ body {
   margin: 0;
   font-family: 300 11px/1.4 'Helvetica Neue', 'sans-serif'; /* (font-weight, font-size/line-height, font-family), (fallback font) */
   color: white;
-  background: #3d0c0c;
+  background: url('./assets/images/backgroundimg.png') no-repeat center center fixed;
+  background-size: cover;
   display: block;
   overflow: hidden;
   -webkit-font-smoothing: antialiased;
