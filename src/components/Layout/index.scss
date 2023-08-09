@@ -33,4 +33,16 @@ $codeColor: #8fe3ed;
     margin: 0 auto;
     z-index: 1;
     animation: fadeIn 1s 0.5s forwards;
+
+    .backgroundDynamic {
+        opacity: 0.5;
+        position: absolute;
+        top:0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        transition: none;
+        animation: none;
+    }
 }

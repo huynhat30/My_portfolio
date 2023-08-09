@@ -3,6 +3,10 @@ import AnimatedLetter from '../AnimatedLetter'
 import './about.scss'
 
 import HashLoader from "react-spinners/HashLoader"
+import BackgroundDesign from '../Background/background_design'
+import particleConfig1 from '../Background/ParticleConfig/particleFloat1'
+
+
 
 const About = ()=>  {
     const [getLetterClass] = useState('text-animate')
@@ -51,6 +55,10 @@ const About = ()=>  {
                     </div>
                     
                 </div>
+                <div className='backgroundDynamic'>
+                    <BackgroundDesign particalConfig = {particleConfig1}/>
+                </div>
+                
             </div>
         }
         </>
