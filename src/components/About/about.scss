@@ -19,6 +19,7 @@
             position: relative;
             margin-bottom: 40px;
             left: 10px;
+            font-family: 'Coolvetica', sans-serif;
         }
         .info{
             animation: fadeIn 1s backwards;
@@ -31,7 +32,7 @@
                 min-width: -webkit-fill-available;
                 min-width: -moz-fit-content;
                 min-width: fit-content;
-                animation: pulse 1s 2s;
+                animation: fadeInUp 1s 2s forwards;
             }
         }
         

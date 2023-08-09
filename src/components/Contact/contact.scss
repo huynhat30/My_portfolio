@@ -3,11 +3,9 @@
 .contact-page {
     .text-zone {
         position: absolute;
-        left: 10%;
-        top: 30%;
-        transform: translateY(-50%);
+        top: 20%;
+        margin: -10% auto;
         width: 100vw;
-        vertical-align: middle;
         display: table-cell;
         max-height: 90%;
 
@@ -15,30 +13,87 @@
             font-size: 100px;
             color: wheat;
             font-weight: 400;
-            margin-top: 0;
             position: relative;
             margin-bottom: 40px;
-            left: 10px;
-        }
-        .info{
-            animation: fadeIn 1s backwards;
-            animation-delay: 2s;
-            p{
-                font-size: 15px;
-                color: whitesmoke;
-                font-family: sans-serif;
-                font-weight: 300;
-                min-width: -webkit-fill-available;
-                min-width: -moz-fit-content;
-                min-width: fit-content;
-                animation: pulse 1s 2s;
-            }
+            font-family: 'Coolvetica', sans-serif;
+            display: flex;
+            justify-content: center;
         }
 
     .contact-form {
-        
+        width: 100%;
+        margin: auto;
+        display: flex;
+        justify-content: center;
+
+        ul {
+            padding: 0;
+            margin: 0;
+            li{
+                list-style: none;
+                overflow: hidden;
+                display: block;
+                margin: auto;
+                position: relative;
+                opacity: 0;
+                animation: fadeInUp 2s 2s forwards;
+                clear: both;
+            }
+
+            li.half {
+                width: 47%;
+                float: left;
+                clear: none;
+                margin-left: 2%;
+                margin-bottom: 5%;
+            }
+
+            li.title{
+                margin-top: 5%;
+                margin-bottom: 2%;
+                font-size: 15px;
+            }
+            
+        }
     }
-        
+
+    input[type='text'], input[type ='email'], textarea{
+        width:100%;
+        border: 0;
+        background: #ef674f;
+        height: 50px;
+        font-size: 16px;
+        color: #fff;
+        padding: 0 20px;
+        box-sizing: border-box;
+        &::placeholder {
+            color: #fff;
+            opacity: 0.5;
+            font-family: Georgia, Times, 'Times New Roman', serif;
+        }
+    }
+
+    textarea{
+        min-height: 150px;
+    }
+    
+    .flat-button {
+        margin-top: 5%;
+        color: #ef674f;
+        background: 0 0;
+        font-size: 15px;
+        letter-spacing: 3px;
+        text-decoration: none;
+        padding: 10px 20px;
+        border: 1px solid #ef674f;
+        float: right;
+        cursor: pointer;
+
+        &:hover{
+            background: #ef674f;
+            color: #fff
+        }
+    }
     }
 }
 

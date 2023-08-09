@@ -27,7 +27,7 @@ const About = ()=>  {
                 <div className='container about-page'>
                 <div className='text-zone'>
                     <h1>
-                        <AnimatedLetter letterClass={getLetterClass} strArray={aboutMe} index={3}/>
+                        <AnimatedLetter letterClass={getLetterClass} strArray={aboutMe} index={1}/>
                     </h1>
 
                     <div className='info'>
