@@ -5,13 +5,88 @@ import AnimatedLetter from '../AnimatedLetter'
 import emailjs from '@emailjs/browser'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
+import axios from 'axios';
 
 const Contact = ()=>  {
     const [getLetterClass, setLetterClass] = useState('text-animate')
     const conttactArr = ['C','o','n','t','a','c','t',' ','m','e']
     const [loading, setLoading] = useState(false);
+    const [display, setDisplay] = useState(true)
+    const [curLoc, setCurLocation] = useState({})
+    const [data, setData] = useState({
+        temp: 0,
+        city: 'Your city',
+        describe: 'default',
+        weatherImage: 'https://cdn2.iconfinder.com/data/icons/weather-color-2/500/weather-02-256.png'
+    })
+    const [cityName, setCityName] = useState('Nottingham')
+    const [cityNameErr, setCityNameErr] = useState('')
 
     const form = useRef();
+
+    useEffect(()=> {
+        getLocation()
+        handleEvent()   
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [])
+
+    const getLocation = async() => {
+        const location = await axios.get('https://ipapi.co/json')
+        setCurLocation(location.data)
+        
+    }
+
+    const handleEvent = async() => {
+        if (cityName !== '') {
+            const weatherAPIurl = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=41079a68ccf70b363fd7f893260dbbb7&units=metric`;  
+        await axios.get(weatherAPIurl)
+        .then(result => {
+            let weatherImgPath = '';
+            if (result.data.weather[0].main === 'Clear') {
+                weatherImgPath = 'https://cdn2.iconfinder.com/data/icons/weather-color-2/500/weather-01-256.png'
+            }
+            else if (result.data.weather[0].main === 'Clouds'){
+                weatherImgPath = 'https://cdn2.iconfinder.com/data/icons/weather-color-2/500/weather-22-256.png'
+            }
+            else if (result.data.weather[0].main === 'Rain'){
+                weatherImgPath = 'https://cdn2.iconfinder.com/data/icons/weather-color-2/500/weather-32-256.png'
+            }
+            else if (result.data.weather[0].main === 'Drizzle'){
+                weatherImgPath = 'https://cdn2.iconfinder.com/data/icons/weather-color-2/500/weather-30-256.png'
+            }
+            else if (result.data.weather[0].main === 'Mist'){
+                weatherImgPath = 'https://cdn2.iconfinder.com/data/icons/weather-color-2/500/weather-29-256.png'
+            }
+            else if (result.data.weather[0].main === 'Thunderstom'){
+                weatherImgPath = 'https://cdn2.iconfinder.com/data/icons/weather-color-2/500/weather-23-256.png'
+            }
+            else if (result.data.weather[0].main === 'Snow'){
+                weatherImgPath = 'https://cdn2.iconfinder.com/data/icons/weather-color-2/500/weather-24-256.png'
+            }
+            setData({...data, 
+                temp: Math.round(result.data.main.temp),
+                city: result.data.name,
+                describe: result.data.weather[0].description,
+                weatherImage: weatherImgPath,
+            })
+            setCityNameErr('')
+            console.log(result.data)
+        })
+        .catch(err => {
+            if (err.response.status === 404) {
+                setCityNameErr('Invalid name')
+            }
+            console.log(err)})
+        }
+    }
+
+    const handleDisplayUnit = () =>{
+        setDisplay(!display)
+    }
+
+    const celToFah = (temp) => {
+        return temp*(9/5) + 32
+    }
 
     const sendEmail = (e) => {
         e.preventDefault();
@@ -113,15 +188,24 @@ const Contact = ()=>  {
                     <div className='weatherApp'>
                         <div className='row'>
                             <div className='search'>
-                                <input type='text' placeholder='City name' />
-                                <button><FontAwesomeIcon icon={faSearch}></FontAwesomeIcon></button>
+                                <input type='text' placeholder='City name' onChange={e => setCityName(e.target.value)}/>
+                                <button onClick={handleEvent}><FontAwesomeIcon icon={faSearch}></FontAwesomeIcon></button>
                             </div>
+
+                            <div className='error'>
+                                <p>{cityNameErr}</p>
+                            </div>
+                            
                             <div className='weatherFocus'>
-                                <img src="https://cdn2.iconfinder.com/data/icons/weather-color-2/500/weather-01-256.png" alt= "weather illustration"/>
+                                <img src={data.weatherImage} alt= "weather illustration"/>
+                                <div className='tempUnitChange'>
+                                    <button onClick={handleDisplayUnit}>{display ? 'Celcius' : 'Fahrenheit'}</button>
+                                </div>
                                 <div className='weatherInfo'>
-                                    <h2 class="temp-C-or-F">22°C</h2>
-                                    <p class="City">Nottingham</p>
-                                    <p class="card-text"><small>Last updated 3 mins ago</small></p>
+                                    <h2 class="temp-C-or-F">{display && <span>{data.temp}°C</span>}{!display && <span>{celToFah(data.temp)}°F</span>}</h2>
+                                    <h2 class="city">{data.city}</h2>
+                                    <h2 class="city">{curLoc.city}</h2>
+                                    <p class="describe"><small>{data.describe}</small></p>
                                 </div>
                             </div>
                         </div>
