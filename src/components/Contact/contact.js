@@ -36,10 +36,10 @@ const Contact = ()=>  {
         
     }
 
-    const handleEvent = async() => {
+    const handleEvent = () => {
         if (cityName !== '') {
             const weatherAPIurl = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=41079a68ccf70b363fd7f893260dbbb7&units=metric`;  
-        await axios.get(weatherAPIurl)
+         axios.get(weatherAPIurl)
         .then(result => {
             let weatherImgPath = '';
             if (result.data.weather[0].main === 'Clear') {
@@ -204,7 +204,6 @@ const Contact = ()=>  {
                                 <div className='weatherInfo'>
                                     <h2 class="temp-C-or-F">{display && <span>{data.temp}°C</span>}{!display && <span>{celToFah(data.temp)}°F</span>}</h2>
                                     <h2 class="city">{data.city}</h2>
-                                    <h2 class="city">{curLoc.city}</h2>
                                     <p class="describe"><small>{data.describe}</small></p>
                                 </div>
                             </div>
