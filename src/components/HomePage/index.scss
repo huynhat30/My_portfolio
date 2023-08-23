@@ -78,8 +78,8 @@
     
 
         &::before {
-            content: '<h3>';
-            margin-left: -70px;
+            content: '<span>';
+            margin-left: -110px;
             font-family: 'La Belle Aurore';
             color: $codeColor;
             font-size: 30px;
@@ -90,7 +90,7 @@
         }
 
         &::after {
-            content: '</h3>';
+            content: '</span>';
             font-family: 'La Belle Aurore';
             color: $codeColor;
             font-size: 30px;
@@ -109,7 +109,7 @@
         padding-top: 15%;
         margin-left: 0;
         position: absolute;
-        right: 0;
+        right: -5%;
         overflow: hidden;
 
         .cubespinner {

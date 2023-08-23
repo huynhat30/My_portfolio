@@ -8,7 +8,7 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons'
 import axios from 'axios';
 
 const Contact = ()=>  {
-    const [getLetterClass, setLetterClass] = useState('text-animate')
+    const [getLetterClass, setLetterClass] = useState('')
     const conttactArr = ['C','o','n','t','a','c','t',' ','m','e']
     const [loading, setLoading] = useState(false);
     const [display, setDisplay] = useState(true)
@@ -16,6 +16,7 @@ const Contact = ()=>  {
     const [data, setData] = useState({
         temp: 0,
         city: 'Your city',
+        country:'country',
         describe: 'default',
         weatherImage: 'https://cdn2.iconfinder.com/data/icons/weather-color-2/500/weather-02-256.png'
     })
@@ -24,16 +25,11 @@ const Contact = ()=>  {
 
     const form = useRef();
 
-    useEffect(()=> {
-        getLocation()
-        handleEvent()   
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [])
-
     const getLocation = async() => {
         const location = await axios.get('https://ipapi.co/json')
         setCurLocation(location.data)
-        
+        handleEvent() 
+        console.log(location.data)
     }
 
     const handleEvent = () => {
@@ -66,6 +62,7 @@ const Contact = ()=>  {
             setData({...data, 
                 temp: Math.round(result.data.main.temp),
                 city: result.data.name,
+                country: result.data.sys.country,
                 describe: result.data.weather[0].description,
                 weatherImage: weatherImgPath,
             })
@@ -101,20 +98,18 @@ const Contact = ()=>  {
           });
       };
 
-    const getAnimated = async () => {
-        return setTimeout(() => {
-            setLetterClass('text-animate-hover')
-        }, 4000)
-    }
-
-
     useEffect(()=>{
+        getLocation()
         setLoading(true)
         setTimeout(() => {
             setLoading(false)
-            getAnimated()
+            setLetterClass('text-animate')
         },2000)
 
+        setTimeout(() => {
+            setLetterClass('text-animate-hover')
+        },4000)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     return (
@@ -126,7 +121,7 @@ const Contact = ()=>  {
                 <div className='container contact-page'>
                     <div className='text-zone'> 
                         <h1>
-                            <AnimatedLetter letterClass={getLetterClass} strArray={conttactArr} index={3}/>
+                            <AnimatedLetter letterClass={getLetterClass} strArray={conttactArr} index={5}/>
                         </h1>
                         <p>
                             I am looking for opportunity in working as a Junior Web Developer or Junior Game Developer. If you have any querry, feel free to contact me using contact form below.
@@ -202,9 +197,9 @@ const Contact = ()=>  {
                                     <button onClick={handleDisplayUnit}>{display ? 'Celcius' : 'Fahrenheit'}</button>
                                 </div>
                                 <div className='weatherInfo'>
-                                    <h2 class="temp-C-or-F">{display && <span>{data.temp}°C</span>}{!display && <span>{celToFah(data.temp)}°F</span>}</h2>
-                                    <h2 class="city">{data.city}</h2>
-                                    <p class="describe"><small>{data.describe}</small></p>
+                                    <h2 className="temp-C-or-F">{display && <span>{data.temp}°C</span>}{!display && <span>{celToFah(data.temp)}°F</span>}</h2>
+                                    <h2 className="city">{data.city}({data.country})</h2>
+                                    <p className="describe"><small>{data.describe}</small></p>
                                 </div>
                             </div>
                         </div>

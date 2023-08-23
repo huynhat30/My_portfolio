@@ -1,6 +1,8 @@
 @import '../Layout/index';
 
 .contact-page {
+        position: relative;
+        overflow: auto;
         display: flex;
         justify-content: center;
     .text-zone {
@@ -8,8 +10,7 @@
         top: 10%;
         padding: 20px;
         width: auto;
-        height: auto;
-        max-height: 90%;
+        height: fit-content;
         background: rgba($color: #3d0c0c, $alpha: 0.8);
         border-radius: 30px;
 
@@ -39,7 +40,6 @@
         margin: auto;
         display: flex;
         justify-content: center;
-
         ul {
             padding: 0;
             margin: 0;
@@ -155,11 +155,11 @@
     .weatherApp {
         position: absolute;
         background: url('https://source.unsplash.com/600x900/?nature,water');
-        left: 70%;
-        top: 38%;
-        width: 300px;
+        left: 8%;
+        top: 10%;
         padding: 20px;
-        height: auto;
+        max-width: fit-content;
+        max-height: fit-content;
         border: 2px solid black;
         border-radius: 15px;
         line-height: 15px;
