@@ -4,12 +4,15 @@ import { useState, useEffect } from 'react'
 import BackgroundDesign from '../Background/background_design'
 import particleConfig2 from '../Background/ParticleConfig/particleFloat2'
 import AnimatedLetter from '../AnimatedLetter'
-import projectsData from '../../data/projects.json'
+import { collection, getDocs } from 'firebase/firestore/lite'
+import { db } from '../../firebase'
 
 const Project = ()=>  {
     const [loading, setLoading] = useState(false);
     const [getLetterClass, setLetterClass] = useState('');
-    const project = 'Projects'.split('')
+    const [proj, setProj] = useState([]);
+
+    const pageTitle = 'Projects'.split('')
     useEffect(()=>{
         setLoading(true)
         setTimeout(() => {
@@ -20,9 +23,16 @@ const Project = ()=>  {
         setTimeout(() => {
             setLetterClass('text-animate-hover')
         },4000)
+
+        getProjectFromDB()
     }, [])
 
-    console.log(projectsData)
+   const getProjectFromDB = async () => {
+        const querySnapshot = await getDocs(collection(db, 'portfolio'))
+        setProj(querySnapshot.docs.map((doc) => {
+            return doc.data()
+        }))
+   }
 
     const renderProject = (project) => {
         return (
@@ -31,7 +41,7 @@ const Project = ()=>  {
                     project.map((prj, idx) => {
                         return (
                             <div className='img-box' key={idx}>
-                                <img src={prj.cover} alt='2D slime game' className='cover'/>
+                                <img src={prj.img} alt='2D slime game' className='cover'/>
                                 <div className='content'>
                                     <p className='title'>{prj.title}</p>
                                     <h4 className='description'>{prj.description}</h4>
@@ -56,11 +66,11 @@ const Project = ()=>  {
                 <div className='container project-page'>
                     <div className='text-zone'>
                         <h1>
-                            <AnimatedLetter letterClass={getLetterClass} strArray={project} index={4}/>
+                            <AnimatedLetter letterClass={getLetterClass} strArray={pageTitle} index={4}/>
                         </h1>
 
                         <div className='projects'>
-                           {renderProject(projectsData.projects)}
+                           {renderProject(proj)}
                         </div>
                     </div>
 

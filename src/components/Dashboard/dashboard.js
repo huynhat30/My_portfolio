@@ -2,7 +2,7 @@ import { useState } from "react"
 import { getAuth, onAuthStateChanged } from "firebase/auth"
 import { useEffect } from "react";
 import HomeDashboard from "./home";
-import Login from "../Login/login";
+import Login from "./login";
 
 const Dashboard = () => {
 
@@ -19,7 +19,7 @@ const Dashboard = () => {
                 setUser(null)
             }
         })
-    }, [])
+    }, [auth])
 
     return (
         <div>
