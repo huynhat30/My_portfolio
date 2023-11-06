@@ -1,29 +1,16 @@
-import { useState } from "react"
-import { getAuth, onAuthStateChanged } from "firebase/auth"
-import { useEffect } from "react";
 import HomeDashboard from "./home";
 import Login from "./login";
+import { useUserContext } from "../../context/userContext";
+import './dashboard.scss'
 
 const Dashboard = () => {
 
-    const [user, setUser] = useState(null)
-    const  auth = getAuth();
-
-    useEffect(() => {
-        onAuthStateChanged(auth, (user) => {
-            if(user) {
-                setUser(user)
-            }
-
-            else {
-                setUser(null)
-            }
-        })
-    }, [auth])
+    const { user, loading, error} = useUserContext()
 
     return (
-        <div>
-            {user ? <HomeDashboard /> : <Login />}
+        <div className="dashboard-container">
+            {error && <p className="error"> {error} </p>}
+            {loading ? <h2>Loading....</h2> : <>{user ? <HomeDashboard /> : <Login />}</>}
         </div>
     )
 }

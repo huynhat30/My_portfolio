@@ -1,7 +1,6 @@
 @import '../Layout/index';
 
 .project-page {
-    background: #3d0c0c;
     position: absolute;
     top: 0;
     left: 0;
@@ -17,10 +16,10 @@
         max-height: 90%;
 
         h1 {
-            font-size: 100px;
+            font-size: 90px;
             color: wheat;
             font-weight: 400;
-            margin-top: 0;
+            margin-top: -10px;
             position: relative;
             margin-bottom: 40px;
             left: 10px;
@@ -35,11 +34,12 @@
     
                 .img-box{
                    position: relative;
-                    height: 400px;
+                   margin-left: 30px;
+                    height: 300px;
                     flex: 1 1 20%;
                     overflow: hidden;
                     border-radius: 15px;
-                    max-width: calc(25% - 100px);
+                    max-width: 200px;
     
                     img {
                         position: absolute;

@@ -1,14 +1,12 @@
 @import '../Layout/index';
+@import url('https://fonts.googleapis.com/css?family=Poppins');
 
 .about-page {
-    background: #3d0c0c;
+    display: flex;
+    left: 10%;
     .text-zone {
-        position: absolute;
-        left: 10%;
-        top: 20%;
-        transform: translateY(-50%);
-        width: 100vw;
-        vertical-align: middle;
+        flex:50%;
+        position: relative;
         max-height: 90%;
 
         h1 {
@@ -24,6 +22,7 @@
         .info{
             animation: fadeIn 1s backwards;
             animation-delay: 2s;
+            width: 70%;
             p{
                 font-size: 15px;
                 color: whitesmoke;
@@ -38,6 +37,50 @@
         
     }
 
+    .text-sphere {
+        flex:50%;
+        position: relative;
+        top: 30%;
+        left: -10%;
+        width: auto;
+        height: 30vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: 'Poppins', sans-serif;
+        text-transform: uppercase;
+
+        .skill-lable {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            h1{
+                font-size: 60px;
+                font-weight: bold;
+                text-decoration: underline;
+                color: #feffa7;
+            }
+        }
+
+        .tagcloud {
+            display: inline-block;
+        }
+
+        .tagcloud--item{
+            color: #95fbff;
+            font-weight: bolder;
+            font-size: 40px;
+            
+            &:hover {
+                color: #ff6347;
+                cursor: pointer;
+            }
+        }
+    }
     
 }
 

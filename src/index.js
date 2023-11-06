@@ -4,13 +4,16 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { HashRouter } from 'react-router-dom';
+import { UserContextProvider } from './context/userContext';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <HashRouter> {/*Wrapping routes around all pages for communicating */}
-      <App />
+      <UserContextProvider>
+       <App />
+      </UserContextProvider>
     </HashRouter>
   </React.StrictMode>
 );

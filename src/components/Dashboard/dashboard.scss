@@ -1,0 +1,17 @@
+
+
+.dashboard-container {
+    position: relative;
+        overflow: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .error {
+            position: absolute;
+            color: red;
+            font-size: 20px;
+            top: 85px;
+        }
+}

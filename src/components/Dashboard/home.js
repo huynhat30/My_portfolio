@@ -1,10 +1,14 @@
 import { useRef } from "react"
-import { auth, db, storage } from "../../firebase"
+import { db, storage } from "../../firebase"
 import { getDownloadURL, ref, uploadBytes } from 'firebase/storage'
 import { addDoc, collection } from "firebase/firestore/lite";
-
+import { useUserContext } from "../../context/userContext";
+import './home.scss'
 const HomeDashboard = () => {
     const form = useRef();
+
+    const { logoutDashboard } = useUserContext()
+
     const submitProject = (e) => {
         e.preventDefault()
         const img = form.current[0]?.files[0]
@@ -63,7 +67,8 @@ const HomeDashboard = () => {
     }
 
     return (
-        <div className="dashboard"> 
+        <div className="dashboard_home"> 
+            <h1>Welcome back, Admin.</h1>
             <form ref={form} onSubmit={submitProject}>
                 <p><input type='file' placeholder="Image Url" /></p>
                 <p><input type='text' placeholder="Title" /></p>
@@ -72,8 +77,8 @@ const HomeDashboard = () => {
                 <p><input type='text' placeholder="Source" /></p>
                 <p><input type='text' placeholder="Demo" /></p>
                 <button type="submit">Submit</button>
-                <button onClick={() => auth.signOut()}>Sign Out</button>
             </form>
+            <button className="signOut" onClick={logoutDashboard}>Sign Out</button>
          </div>
     )
 }

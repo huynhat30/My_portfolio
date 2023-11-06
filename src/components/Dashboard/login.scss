@@ -1,0 +1,61 @@
+@import '../Layout/index';
+
+.dashboard_login {
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+    h1{
+        font-size: 50px;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        input {
+            font-size: 30px;
+            padding: 10px;
+            margin: 10px;
+            border-radius: 15px;
+            border: 1px solid;
+            opacity: 0.7;
+
+            &:hover {
+                opacity: 0.9;
+            }
+        }
+
+        button {
+            
+            font-size: 20px;
+            padding: 10px;
+            border-radius: 15px; 
+            width: 300px;
+            cursor: pointer;
+            background: brown;
+            color: wheat;
+            opacity: 0.4;
+            border: 0;
+            font-weight: 600;
+
+            &:hover {
+                background: rgb(255, 42, 77);
+                color: rgb(243, 239, 231);
+                font-weight: 600;
+                opacity: 0.7;
+            }
+        }
+
+        p {
+            font-size: 25px;
+            font-weight: 900;
+            cursor: pointer;
+        }
+    }
+}

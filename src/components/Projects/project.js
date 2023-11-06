@@ -61,7 +61,7 @@ const Project = ()=>  {
         <>
             {
                 loading ?
-                <div className='loader'><HashLoader color="#3d0c0c" size={100}/></div>
+                <div className='loader'><HashLoader color="#36d7b7" size={100}/></div>
                 :
                 <div className='container project-page'>
                     <div className='text-zone'>
