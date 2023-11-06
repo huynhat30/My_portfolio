@@ -1,17 +1,16 @@
 @import '../Layout/index';
 
 .project-page {
-    position: absolute;
+    position: relative;
     top: 0;
     left: 0;
-    overflow: scroll;
+    overflow: auto;
+    overflow-x: hidden;
     
 
     .text-zone {
         position: absolute;
         left: 10%;
-        top: 20%;
-        transform: translateY(-50%);
         width: 100vw;
         vertical-align: middle;
         max-height: 90%;
@@ -27,6 +26,7 @@
             font-family: 'Coolvetica', sans-serif;
         }
         .projects {
+            width: 90%;
             .img-container {
                 display: flex;
                 gap: 15px;
